@@ -5,8 +5,8 @@ from .models import User, ChatHistory
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        # fields = ('user_id','first_name', 'last_name', 'email_id')
-        fields = '__all__'
+        fields = ('user_id','first_name', 'last_name', 'email_id')
+
 
     # def create(self, validated_data):
     #     return User.objects.create(**validated_data)
@@ -15,4 +15,5 @@ class UserSerializer(serializers.ModelSerializer):
 class ChatSerializer(serializers.ModelSerializer):
     class Meta:
         model = ChatHistory
-        fields = '__all__'
+        fields=('user_id','msg','reply')
+        # fields = '__all__'
