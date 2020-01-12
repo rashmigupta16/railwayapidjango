@@ -39,3 +39,5 @@ class ChatHistory(models.Model):
     class Meta:
         ordering = ['updated_at']
         db_table = 'chathistory'
+
+
