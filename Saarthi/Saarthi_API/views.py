@@ -6,7 +6,7 @@ from .models import User, ChatHistory
 from rest_framework.response import Response
 import re, datetime, time, requests
 
-api_key = 'cpreedafjx'
+api_key = 'p87dtt61i4'
 
 
 class UserCreateApi(generics.CreateAPIView):
@@ -74,10 +74,11 @@ class ChatHistoryCreateApi(generics.CreateAPIView):
                     # call railway api
 
                     url = "https://api.railwayapi.com/v2/live/train/" + trn_no + "/station/" + station + "/date/" + date + "/apikey/" + api_key + "/"
+                    print(url)
                     get_status = requests.get(url).json()
                     print(get_status)
 
-                    qw = get_status["train"]["number"]
+                    qw = get_status["position"]
                     print(qw)
 
                     solution = "You queried for Train: " + str(qw)
